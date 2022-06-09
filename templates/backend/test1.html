@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>TEST #1</h1>
+<form>
+<p>Your username is: {{ request.user }} </p>
+<p>Your user is authenticated?  {{ request.user.is_authenticated }} </p>
+</form>
+<hr>
+<form>
+    <p>Your context text is: {{ text }}</p>
+    <p>Your number is: {{ num }}</p>
+    <p>List: {{ list }}</p>
+</form>
+<hr>
+<form>
+    <h3>For loops in templates:</h3>
+    <ul>
+        {% for my_sub_item in list %}
+        <li>Counter: {{forloop.counter}} - Item: {{ my_sub_item }}</li>
+        {% endfor %}
+    </ul>
+</form>
+<hr>
+<h3>Conditionals in templates: </h3>
+ {% if auth == True %}
+ <p>The authorized authorization is: {{ auth }} </p>
+ {% elif auth == None %}
+ <p>GO TO LOG-IN PAGE</p>
+ {% else %}
+ <p>ERROR: you no authorizd, go away!!!</p>
+ {% endif %}
+{% endblock %}

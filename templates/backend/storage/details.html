@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>File name: {{ object.name }}</p>
+<p>File dimension: {{ object.dimension }}</p>
+<p>Last edited: {{ object.date }}</p>
+<p>The file is a: {{ object.type }}</p>
+{% endblock %}

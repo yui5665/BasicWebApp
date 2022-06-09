@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Template Tags and Filters: </h1>
+<p>Tags are the first arg used inside curly brackets with percentage signs</p>
+<p>While filters are used to apply functions to data:</p>
+<ul>
+{% for x in nlist %}
+    <li>Raw data: {{x}}</li>
+    <li>With filter: {{x|add:10000}} </li>
+{% endfor %}
+</ul>
+{% endblock %}
