@@ -1,8 +1,10 @@
 from backend.models import *
 
-def db_instances(model):
-    object_list = model.objects.all()
-    return object_list
+# Utility functions to use for database operations:
+
+# def db_instances(model):
+#     object_list = model.objects.all()
+#     return object_list
 
 def validate_user(username, password):
     if (
