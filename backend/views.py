@@ -14,7 +14,7 @@ def index(Request):
 def storage(Request):
     return HttpResponse(listdir('backend/storage/'))
 
-def details(Request):
+def details(Request): # currently unused
     obj = File.objects.get(id=1)
     my_context = {'object' : obj}
     return render(Request, 'backend/storage/details.html', my_context)
