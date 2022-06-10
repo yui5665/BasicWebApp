@@ -10,4 +10,13 @@
     <li>With filter: {{x|add:10000}} </li>
 {% endfor %}
 </ul>
+<hr>
+<p>Search for a file:</p>
+<form method="GET">{% csrf_token %}
+<input name='q' type="text" placeholder="Search" />
+<button name="search_button">Search</button>
+</form>
+
+<p>{{ myfile }}</p>
+
 {% endblock %}

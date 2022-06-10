@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Login</h2>
+{% comment %} <form action="/backend/" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form> {% endcomment %}
+
+<br>
+
+<form method="POST">{% csrf_token %}
+  <input name='username' type="text" placeholder="Username" />
+  <input name='password' type="text" placeholder="Password" />
+  <button name="submit_button">Submit</button>
+</form>
+
+{% if request.session.authenticated == False %}
+<p>You are NOT authenticated!</p>
+{% include 'return_home.html' %}
+{% else %}
+<p>You are authenticated!</p>
+{% include 'return_home.html' %}
+{% endif %}
+
+{% endblock  %}

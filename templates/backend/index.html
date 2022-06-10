@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if request.session.authenticated == False %}
+<p>You are NOT authenticated!</p>
+<p><a rel="stylesheet" href="/backend/log_in">Go to login</a></p>
+
+
+{% else %}
+<p>You are authenticated!</p>
+<p><a rel="stylesheet" href="/backend/add_user/">Add User</a></p>
+<p><a rel="stylesheet" href="/backend/storage/">Files List</a></p>
+<p><a rel="stylesheet" href="/backend/storage/register_file/">Register File</a></p>
+<p><a rel="stylesheet" href="/backend/log_out">Go to logout</a></p>
+
+{% endif %}
+
+{% endblock  %}
